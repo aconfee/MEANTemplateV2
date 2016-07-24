@@ -18,7 +18,7 @@ Run `nodemon` and view on localhost:3000.
 
 Develop:
 
-run `gulp distribute-watch` to watch all scss and js files. All files minified and bundled into dist.*.
+run `gulp distribute-watch` to watch all scss and js files. All files minified and bundled into dist.\*.
 
 Test:
 
