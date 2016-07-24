@@ -1,30 +1,36 @@
-Example mean stack project.
+Tests Status:
 
-IMPORTANT!
+Description:
+This project is my base scaffolding for any MEAN stack project.
+- Uses Angular 2.
+- Has tests wired in already testing server health, API endpoints, and Angular 2 components.
+- Has build system set up with Gulp.
+- Has Procfile for easy deployment to Heroku
+- Has local MongoDB instance wired up.
 
-Reset remotes to git and heroic or this will override other projects.
+Setup:
 
-TO DEVELOP:
+Run `npm install`
 
-run 'gulp distribute-watch' to watch all scss and js files. On save they will be re minified/uglified/distributed.
-run 'nodemon' to watch for file changes and restart server.
+Run:
 
-By running both of these, I can just work and save files, and refresh my page to see changes.
+Run `nodemon` and view on localhost:3000.
 
-App is running on localhost:3000.
+Develop:
 
+run `gulp distribute-watch` to watch all scss and js files. All files minified and bundled into dist.*.
 
-TO DEPLOY:
+Test:
 
-App is configured to work with heroku. Procfile is already made. Simply create new heroku app to deploy. (heroku create?).
-Use 'heroku local' to see changes locally. Run on localhost:5000.
+Deploy:
 
+Procfile is already set up for Heroku deployment.
+Run `heroku create`
 
-DESIGN:
+Verify Heroku remote was added with `git remote -v`
 
-Express is serving an SPA. Express is meant to be extended to have an api and connect to mongoose. Will probably make
-another project with that set up, but this is meant to be extremely minimal.
+Add git as Heroku remote `heroku git:remote -a <appname>``
 
-SPA is being served when Express sends static folder, app_client, to the browser. The 'static' function in Express
-defaults to any file named 'index'. In this project, index.html is used as an entry point for our SPA. All routing and
-everything is handled by angular in app_client. 
+Deploy with `git push heroku master`
+
+Open app with `heroku open`
