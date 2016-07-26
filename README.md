@@ -11,17 +11,17 @@ This project is my base scaffolding for any MEAN stack project.
 TERMINAL COMMANDS
 
 SETUP:
-`npm install` -- Installs all dependencies.
-`npm run build` -- Uglifies, minifies, distributes, and builds project.
+- `npm install` -- Installs all dependencies.
+- `npm run build` -- Uglifies, minifies, distributes, and builds project.
 
 DEVELOP:
-`npm run develop:start` -- Starts server with nodemon. Restarts server on file changes.
-`npm run develop:watch` -- Watches all specified files and redistributes them on saves.
-`npm run develop:hint` -- Show all js warnings and errors.
-`npm test` -- Runs Mocha unit tests.
+- `npm run dev:start` -- Starts server with nodemon. Restarts server on file changes.
+- `npm run dev:watch` -- Watches all specified files and redistributes them on saves.
+- `npm run dev:hint` -- Show all js warnings and errors.
+- `npm test` -- Runs Mocha unit tests.
 
 DEPLOY:
-`npm run deploy` -- Deploys code to Heroku.
+- `npm run deploy` -- Deploys code to Heroku.
 
 
 FIRST TIME SETUP
@@ -29,7 +29,7 @@ FIRST TIME SETUP
 When this project is first cloned, run the setup specified above (install and build), then follow these instructions.
 
 1. Prepare For Heroku Deployment:
-  a. Run `heroku create`
+a. Run `heroku create`
   b. Verify Heroku remote was added with `git remote -v`
   c. Add git as Heroku remote `heroku git:remote -a <appname>``
   d. Deploy with `git push heroku master`

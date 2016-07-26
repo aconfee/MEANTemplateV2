@@ -5,9 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "build": "gulp distribute-js && gulp distribute-sass",
-    "develop:start": "nodemon",
-    "develop:watch": "gulp distribute-watch",
-    "develop:lint": "gulp hint",
+    "dev:start": "nodemon",
+    "dev:watch": "gulp distribute-watch",
+    "dev:lint": "gulp hint",
     "test": "mocha",
     "deploy": "echo placeholder"
   },
