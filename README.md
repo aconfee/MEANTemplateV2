@@ -29,8 +29,8 @@ FIRST TIME SETUP
 When this project is first cloned, run the setup specified above (install and build), then follow these instructions.
 
 1. Prepare For Heroku Deployment:
-a. Run `heroku create`
-  b. Verify Heroku remote was added with `git remote -v`
-  c. Add git as Heroku remote `heroku git:remote -a <appname>``
-  d. Deploy with `git push heroku master`
-  e. Open app with `heroku open`
+  - Run `heroku create`
+  - Verify Heroku remote was added with `git remote -v`
+  - Add git as Heroku remote `heroku git:remote -a <appname>``
+  - Deploy with `git push heroku master`
+  - Open app with `heroku open`
