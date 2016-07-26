@@ -26,7 +26,7 @@
       enabled: true,
       requireBase: false
     });
-  };
+  }
 
   // Add the config to our app.
   angular

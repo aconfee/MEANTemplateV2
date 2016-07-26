@@ -26,7 +26,7 @@
       enabled: true,
       requireBase: false
     });
-  };
+  }
 
   // Add the config to our app.
   angular
@@ -46,7 +46,7 @@ function homeController($scope){
   viewModel.exampleData = {
     exampleItem: 'Example text from home controller being passed to example-directive.'
   };
-};
+}
 
 angular
   .module('exampleApp')
@@ -57,12 +57,12 @@ function aboutController($scope){
   var viewModel = this;
 
   viewModel.myVariable = "I'm pretty cool, I guess.";
-};
+}
 
 (function(){
   angular
     .module('exampleApp')
-    .directive('navigationBar', navigationBar)
+    .directive('navigationBar', navigationBar);
 
   function navigationBar(){
     return{
@@ -75,7 +75,7 @@ function aboutController($scope){
 (function(){
   angular
     .module('exampleApp')
-    .directive('exampleDirective', exampleDirective)
+    .directive('exampleDirective', exampleDirective);
 
   function exampleDirective(){
     return{

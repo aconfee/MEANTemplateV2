@@ -36,23 +36,31 @@ app.use(express.static(path.join(__dirname, 'app_client')));
 // API
 app.use('/api', apiRoutes); // These routes will use the authentication above.
 
-// If we send a route in the URL bar, or refresh, the route is sent to express, not handled
-// by Angular. So be sure to redirect everything back to Angular to handle.
-app.use(function(req, res){
-  res.sendfile(path.join(__dirname, 'app_client', 'index.html'));
-});
-
-// catch 404 and forward to error handler
+// API 404
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  res.status(200);
+  if(req.originalUrl.indexOf("/api") !== -1){
+    // No need to create full error to display since this is only relevant to the API.
+    // Client will be redirected to Angular app (as expected for bad route).
+    res.status(404);
+  }
+
+  next();
 });
 
-// error handlers
+// Serve Angular app.
+// All errors must be handled from Angular from here.
+app.use(function(req, res){
+  res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
+});
+
+
+
+// error handlers -- if shit has absolutely hit the fan and we get here.
 
 // development error handler
 // will print stacktrace
+
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);

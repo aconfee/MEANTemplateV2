@@ -1,7 +1,7 @@
 (function(){
   angular
     .module('exampleApp')
-    .directive('exampleDirective', exampleDirective)
+    .directive('exampleDirective', exampleDirective);
 
   function exampleDirective(){
     return{
