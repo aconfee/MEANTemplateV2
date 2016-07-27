@@ -45,4 +45,7 @@ When this project is first cloned, run the setup specified above (install and bu
 
 2. Set up Heroku deployment from Travis CI
   - Install Travis CI command line client `gem install travis -v 1.8.2 --no-rdoc --no-ri`
-  - Encrypt your Heroku api token and add to .travis.yml `travis encrypt $(heroku auth:token) --add deploy.api_key`
+  - Get your Heroku auth token by running `heroku auth:token`. Copy this.
+  - Encrypt your Heroku token with `travis encrypt -r aconfee/MEANTemplateV2 --org` (then paste in the token when prompted with 'Reading stdin.. press ctrl+D to finish')
+  - Copy the encrypted token and add to 'api_key: secure:' in .travis.yml
+  - Deploy to github. Travis should run everything and deploy to Heroku when finished. 
