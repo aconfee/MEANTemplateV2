@@ -1,45 +1,31 @@
 language: node_js
 node_js:
-  - 4
-
+- 4
 notifications:
   email:
     recipients:
-      - adamestela@gmail.com
-
+    - adamestela@gmail.com
 branchs:
   only:
-    - master
-
-services: # enable various services
-  - mongodb
-
+  - master
+services:
+- mongodb
 before_install:
-  - npm install -g grunt
-
+- npm install -g grunt
 install:
-  - npm install
-  - npm run build
-
+- npm install
+- npm run build
 before_script:
-
 script:
-  - npm run dev:lint
-  - npm run test
-
-on_success:
-  - npm run deploy
-
-on_failure:
-
+- npm run dev:lint
+- npm run test
 after_success:
-
 after_failure:
-
 after_script:
-
 before_deploy:
-
 deploy:
-
+  provider: heroku
+  api_key:
+    secure: LwT9e2BaRQvxaHMtX56nKVOkcschlSDDfjbvYYvDBqrXaqhZMP8StVuwbGIv1B1wZAPdbhFmQDydBtOAZARadt3tQroS/Npw0PgjWPWUJr0qK2zmQ3zlxe2FGYvJnSnc3CS1P6EqDfESRA7cu0OOs4TAi7maS9qnWIvSUxJ4XYtvJm5aJ/EHCUSqQbwYQv7FDcRZY9Srabu9ZVUVa4Y5/iZ4EsHiHP33KNjUxEi4qhj9jqy4G4TaaqDagjGthWhCNQuSR4Ff2pLnyZ5y3t7jmspnzmlA1eEBLwTrCYeIQiUOS7Dzp8f4ixn+7F6GYceuNJDPt1cYSQRzx/NxFQ8W0EuSPCMw6c00GX6yHEidM07zuquGeNBAjda8kJy0O1fLqax62rqPw+9eeFuNhmZCcbpErVyIZQAKo3R8qxJS3Kf67QNTiOO3q/aYNgm5qmO7FOvW7OqXATXlRV16deLUERJvWDAO3FM0210QzMMPz6v8wPrvhH1jhCNk699+UQu0zxXZ8qxLLYPNUqa7b4UiuDVjw9vX3L9Z1Mnk3osX7deyjT6+0Xx+uR3qwGjFew/kx97x/WBBVrNEVJxEbrWv0Twqwn8mOPNeAX0mibPE+Y6uYBVMwl5wH+be/wyh3O5CZhQemLGwo+ShELYHlrI9iJqPfjuwOzWtnEJDPyHss5A=
+  app: floating-basin-53892
 after_deploy:
