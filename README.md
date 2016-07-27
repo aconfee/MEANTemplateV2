@@ -10,6 +10,13 @@ This project is my base scaffolding for any MEAN stack project.
 - Has Procfile specified for easy deployment to Heroku
 - Has local MongoDB instance wired up.
 
+CONTINUOUS INTEGRATION
+
+After developing and building, pushing to git will run through Travis CI.
+- lints js
+- runs tests
+- deploys to Heroku
+
 TERMINAL COMMANDS
 
 SETUP:
@@ -33,6 +40,9 @@ When this project is first cloned, run the setup specified above (install and bu
 1. Prepare For Heroku Deployment:
   - Run `heroku create`
   - Verify Heroku remote was added with `git remote -v`
-  - Add git as Heroku remote `heroku git:remote -a <appname>``
   - Deploy with `git push heroku master`
   - Open app with `heroku open`
+
+2. Set up Heroku deployment from Travis CI
+  - Install Travis CI command line client `gem install travis -v 1.8.2 --no-rdoc --no-ri`
+  - Encrypt your Heroku api token and add to .travis.yml `travis encrypt $(heroku auth:token) --add deploy.api_key`
