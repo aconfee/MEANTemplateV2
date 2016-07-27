@@ -1,0 +1,45 @@
+language: node_js
+node_js:
+  - 4
+
+notifications:
+  email:
+    recipients:
+      - adamestela@gmail.com
+
+branchs:
+  only:
+    - master
+
+services: # enable various services
+  - mongodb
+
+before_install:
+  - npm install -g grunt
+
+install:
+  - npm install
+  - npm run build
+
+before_script:
+
+script:
+  - npm run dev:hint
+  - npm run test
+
+on_success:
+  - npm run deploy
+
+on_failure:
+
+after_success:
+
+after_failure:
+
+after_script:
+
+before_deploy:
+
+deploy:
+
+after_deploy:

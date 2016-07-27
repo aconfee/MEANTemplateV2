@@ -1,5 +1,7 @@
 Tests Status:
 
+[![BuildStatus](https://travis-ci.org/aconfee/MEANTemplateV2.svg?branch=master)](https://travis-ci.org/aconfee/MEANTemplateV2)
+
 Description:
 This project is my base scaffolding for any MEAN stack project.
 - Uses Angular 2.
