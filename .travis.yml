@@ -24,7 +24,7 @@ install:
 before_script:
 
 script:
-  - npm run dev:hint
+  - npm run dev:lint
   - npm run test
 
 on_success:

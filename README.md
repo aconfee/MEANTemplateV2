@@ -19,7 +19,7 @@ SETUP:
 DEVELOP:
 - `npm run dev:start` -- Starts server with nodemon. Restarts server on file changes.
 - `npm run dev:watch` -- Watches all specified files and redistributes them on saves.
-- `npm run dev:hint` -- Show all js warnings and errors.
+- `npm run dev:lint` -- Show all js warnings and errors.
 - `npm test` -- Runs Mocha unit tests.
 
 DEPLOY:
