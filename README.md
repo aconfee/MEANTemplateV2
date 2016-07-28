@@ -1,5 +1,3 @@
-Tests Status:
-
 [![BuildStatus](https://travis-ci.org/aconfee/MEANTemplateV2.svg?branch=master)](https://travis-ci.org/aconfee/MEANTemplateV2)
 
 Description:
@@ -48,4 +46,4 @@ When this project is first cloned, run the setup specified above (install and bu
   - Get your Heroku auth token by running `heroku auth:token`. Copy this.
   - Encrypt your Heroku token with `travis encrypt -r aconfee/MEANTemplateV2 --org` (then paste in the token when prompted with 'Reading stdin.. press ctrl+D to finish')
   - Copy the encrypted token and add to 'api_key: secure:' in .travis.yml
-  - Deploy to github. Travis should run everything and deploy to Heroku when finished. 
+  - Deploy to github. Travis should run everything and deploy to Heroku when finished.
