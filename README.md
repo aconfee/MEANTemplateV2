@@ -7,6 +7,7 @@ This project is my base scaffolding for any MEAN stack project.
 - Has build system set up with Gulp.
 - Has Procfile specified for easy deployment to Heroku
 - Has local MongoDB instance wired up.
+- Connected to Travis CI. Continually tested and deployed on success: https://travis-ci.org/aconfee.
 
 CONTINUOUS INTEGRATION
 
@@ -14,6 +15,8 @@ After developing and building, pushing to git will run through Travis CI.
 - lints js
 - runs tests
 - deploys to Heroku
+
+Can see each deployment here: https://travis-ci.org/aconfee
 
 TERMINAL COMMANDS
 
