@@ -1,5 +1,11 @@
 [![BuildStatus](https://travis-ci.org/aconfee/MEANTemplateV2.svg?branch=master)](https://travis-ci.org/aconfee/MEANTemplateV2)
 
+IN THIS README:
+1. Description
+2. Continuous Integration
+3. Terminal Commands
+4. First Time Setup
+
 Description:
 This project is my base scaffolding for any MEAN stack project.
 - Uses Angular 2.
@@ -36,15 +42,23 @@ DEPLOY:
 
 FIRST TIME SETUP
 
-When this project is first cloned, run the setup specified above (install and build), then follow these instructions.
+1. Clone the project from github.
 
-1. Prepare For Heroku Deployment:
+2. Run `npm install` and `npm run build` to be all set up locally.
+  - You can test to make sure everything works by running `npm run dev:start` and viewing on localhost:3000.
+
+3. Initialize a new github repo and push to it.
+  - Delete .git folder and reinitialize with `git init`. This also resets remotes.
+
+4. Activate the repo in Travis CI: https://travis-ci.org/profile/aconfee.
+
+5. Prepare For Heroku Deployment:
   - Run `heroku create`
   - Verify Heroku remote was added with `git remote -v`
   - Deploy with `git push heroku master`
   - Open app with `heroku open`
 
-2. Set up Heroku deployment from Travis CI
+6. Set up Heroku deployment from Travis CI
   - Install Travis CI command line client `gem install travis -v 1.8.2 --no-rdoc --no-ri`
   - Get your Heroku auth token by running `heroku auth:token`. Copy this.
   - Encrypt your Heroku token with `travis encrypt -r aconfee/MEANTemplateV2 --org` (then paste in the token when prompted with 'Reading stdin.. press ctrl+D to finish')
