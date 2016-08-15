@@ -13,7 +13,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var jshint = require('gulp-jshint');
 
 // Path variables.
-var jsFiles = [
+var jsFilesClient = [
   './app_client/app.js',
   './app_client/home/home.controller.js',
   './app_client/about/about.controller.js',
@@ -28,14 +28,14 @@ var cssCompileLocation = './public/stylesheets/css';
 var cssDistLocation = './public/stylesheets';
 
 gulp.task('hint', function() {
-  return gulp.src(jsFiles)
+  return gulp.src(jsFilesClient)
     .pipe(jshint())
     .pipe(jshint.reporter());
 });
 
 // Concat, rename, and uglify all js files for our spa.
 gulp.task('distribute-js', function(){
-  return gulp.src(jsFiles)
+  return gulp.src(jsFilesClient)
     .pipe(sourcemaps.init())
     .pipe(concat('dist.js'))
     .pipe(gulp.dest(jsDistLocation))
@@ -62,7 +62,7 @@ gulp.task('distribute-sass', function(){
 // Watch project and redistribute when changes are made to scss or js files.
 gulp.task('distribute-watch', function(){
   gulp.watch(sassFiles, ['distribute-sass']);
-  gulp.watch(jsFiles, ['distrubute-js']);
+  gulp.watch(jsFilesClient, ['distrubute-js']);
 });
 
 // Run all default tasks to build out dist.
