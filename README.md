@@ -1,6 +1,8 @@
 [![BuildStatus](https://travis-ci.org/aconfee/MEANTemplateV2.svg?branch=master)](https://travis-ci.org/aconfee/MEANTemplateV2)
 
 Live Site: https://floating-basin-53892.herokuapp.com/
+Travis: https://travis-ci.org/aconfee/MEANTemplateV2
+mLab: https://www.mlab.com/databases/heroku_0p01cnk5
 
 IN THIS README:
   1. Description
