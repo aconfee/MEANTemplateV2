@@ -15,9 +15,9 @@ module.exports.testPost = function(req, res){
 // API call to retrieve from database.
 module.exports.testGetData = function(req, res){
   console.log("just searching by name");
-  Example.find({}, function(err, docs){
+  Example.find({}, function(err, doc){
       console.log("error is: " + err);
-      console.log("doc is: " + docs);
+      console.log("doc is: " + doc);
 
       if(err){
         console.log(err);
