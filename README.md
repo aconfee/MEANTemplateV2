@@ -1,10 +1,12 @@
 [![BuildStatus](https://travis-ci.org/aconfee/MEANTemplateV2.svg?branch=master)](https://travis-ci.org/aconfee/MEANTemplateV2)
 
+Live Site: https://floating-basin-53892.herokuapp.com/
+
 IN THIS README:
-1. Description
-2. Continuous Integration
-3. Terminal Commands
-4. First Time Setup
+  1. Description
+  2. Continuous Integration
+  3. Terminal Commands
+  4. First Time Setup
 
 Description:
 This project is my base scaffolding for any MEAN stack project.
@@ -64,3 +66,10 @@ FIRST TIME SETUP
   - Encrypt your Heroku token with `travis encrypt -r aconfee/MEANTemplateV2 --org` (then paste in the token when prompted with 'Reading stdin.. press ctrl+D to finish')
   - Copy the encrypted token and add to 'api_key: secure:' in .travis.yml
   - Deploy to github. Travis should run everything and deploy to Heroku when finished.
+
+7. Set up MongoDB
+  - Add MongoDB to the heroku app with `sudo heroku addons:create mongolab`
+  - Get the URI with `sudo heroku config | grep MONGODB_URI`
+  - Add the URI to the production Heroku environment with `heroku config:set MONGOLAB_URI=<my uri>`
+  - For good measure, also add `heroku config:set NODE_ENV=production`
+  - Test this is working by deploying to Heroku and viewing the logs.
