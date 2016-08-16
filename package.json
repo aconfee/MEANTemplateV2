@@ -9,7 +9,7 @@
     "dev:watch": "gulp distribute-watch",
     "dev:lint": "gulp hint",
     "test": "mocha",
-    "deploy": "echo placeholder"
+    "deploy": "sudo git push origin master"
   },
   "engines": {
     "node": "~4.4.5",
