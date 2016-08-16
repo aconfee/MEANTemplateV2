@@ -6,6 +6,7 @@ if(process.env.NODE_ENV === 'production'){
   dbURI = process.env.MONGOLAB_URI; // MONGOLAB_URI has been added to Heroku for prod, and added to .env for local.
 }
 
+console.log("Connecting to URI: " + dbURI);
 mongoose.connect(dbURI);
 
 // Listen for Mongoose events.
