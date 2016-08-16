@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'production'; // Use correct MongoDB.
+
 var chai = require('chai');
 var assert = chai.assert;
 
@@ -5,8 +7,13 @@ var chaiHttp = require('chai-http'); // Chai plugin to test api
 var server = require('../app'); // My app server
 chai.use(chaiHttp);
 
-describe('Base API', function(){
-  describe('base API test', function(){
+var mongoose = require('mongoose');
+
+/*
+ * GET HEARTBEAT FROM API
+ */
+describe('Express Server', function(){
+  describe('Express app API', function(){
     it("should return good status code and message on /test GET", function(done){
       chai.request(server)
         .get('/api/test')
@@ -41,6 +48,33 @@ describe('Base API', function(){
         .get('/api/unknown')
         .end(function(err, res){
           assert.equal(res.status, 404);
+
+          done();
+        });
+    });
+  });
+});
+
+/*
+ * GET HEARTBEAT FROM MONGOOSE
+ */
+describe('MongoDB', function(){
+  describe('Express API interacting with Mongoose', function(){
+
+    var testDataId = "57b1702a03e6b25ae9f99e42";
+
+    it("should return a persisting document when requested by id", function(done){
+      this.timeout(10000); // Mongoose will still be initializing here.
+
+      chai.request(server)
+        .get('/api/testdata/' + testDataId)
+        .end(function(err, res){
+          assert.equal(res.status, 200);
+          assert.equal(res.body.name, 'Finally First Example');
+          assert.isNotNull(res.body.data);
+          assert.equal(res.body.data.length, 1);
+          assert.equal(res.body.data[0].name, 'First subdocument');
+          assert.equal(res.body.data[0].data, 9);
 
           done();
         });

@@ -3,7 +3,7 @@ require('./example'); // Include in app since this file required in app.js.
 
 var dbURI = 'mongodb://localhost/exampleApp';
 if(process.env.NODE_ENV === 'production'){
-  dbURI = process.env.MONGOLAB_URI;
+  dbURI = process.env.MONGOLAB_URI; // MONGOLAB_URI has been added to Heroku for prod, and added to .env for local.
 }
 
 mongoose.connect(dbURI);

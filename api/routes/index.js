@@ -4,9 +4,8 @@ var router = express.Router();
 var ctrlTest = require('../controllers/test');
 router.get('/test', ctrlTest.testGet);
 router.post('/test', ctrlTest.testPost);
-router.get('/testdata/:dataid', ctrlTest.testGetData);
-router.post('/testdata', ctrlTest.testPostData);
 
-// new ctrl here
+// Database
+router.get('/testdata/:dataid', ctrlTest.testGetData);
 
 module.exports = router;
