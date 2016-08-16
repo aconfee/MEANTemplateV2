@@ -3,7 +3,10 @@ require('./example'); // Include in app since this file required in app.js.
 
 var dbURI = 'mongodb://localhost/exampleApp';
 if(process.env.NODE_ENV === 'production'){
-  dbURI = process.env.MONGOLAB_URI; // MONGOLAB_URI has been added to Heroku for prod, and added to .env for local.
+  dbURI = process.env.MONGOLAB_URI; // MONGOLAB_URI has been added to Heroku for prod.
+}
+else if(process.env.NODE_ENV === 'test'){
+  dbURI = process.env.TEST_MONGOLAB_URI; // TEST_MONGOLAB_URI has been added to .env and .travis.yml(encrypted) for test.
 }
 
 console.log("Connecting to URI: " + dbURI);

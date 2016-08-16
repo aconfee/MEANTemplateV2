@@ -74,4 +74,6 @@ FIRST TIME SETUP
   - Get the URI with `sudo heroku config | grep MONGODB_URI`
   - Add the URI to the production Heroku environment with `heroku config:set MONGOLAB_URI=<my uri>`
   - For good measure, also add `heroku config:set NODE_ENV=production`
-  - Test this is working by deploying to Heroku and viewing the logs.
+    - Test this is working by deploying to Heroku and viewing the logs.
+  - Add TEST_MONGOLAB_URI to local environment by creating .env file and adding. Will automatically be ignored by git and parsed by Node into env variables. Used in test.
+  - Add TEST_MONGOLAB_URI to Travis CI environment. Can be encrypted and added to .travis.yml. See instructions here: https://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables

@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'production'; // Use correct MongoDB.
+process.env.NODE_ENV = 'test'; // Use correct MongoDB (and test env in general).
 
 var chai = require('chai');
 var assert = chai.assert;
