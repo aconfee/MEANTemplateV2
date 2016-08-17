@@ -7,5 +7,7 @@ router.post('/test', ctrlTest.testPost);
 
 // Database
 router.get('/testdata/:dataid', ctrlTest.testGetData);
+router.post('/testdata', ctrlTest.testPostData);
+router.delete('/testdata/:dataid', ctrlTest.testDeleteData);
 
 module.exports = router;
