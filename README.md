@@ -52,7 +52,7 @@ FIRST TIME SETUP
   - You can test to make sure everything works by running `npm run dev:start` and viewing on localhost:3000.
 
 3. Initialize a new github repo and push to it.
-  - Delete .git folder and reinitialize with `git init`. This also resets remotes.
+  - Add remote to new repo. Push to it, then delete old origin.
 
 4. Activate the repo in Travis CI: https://travis-ci.org/profile/aconfee.
 
@@ -62,14 +62,7 @@ FIRST TIME SETUP
   - Deploy with `git push heroku master`
   - Open app with `heroku open`
 
-6. Set up Heroku deployment from Travis CI
-  - Install Travis CI command line client `gem install travis -v 1.8.2 --no-rdoc --no-ri`
-  - Get your Heroku auth token by running `heroku auth:token`. Copy this.
-  - Encrypt your Heroku token with `travis encrypt -r aconfee/MEANTemplateV2 --org` (then paste in the token when prompted with 'Reading stdin.. press ctrl+D to finish')
-  - Copy the encrypted token and add to 'api_key: secure:' in .travis.yml
-  - Deploy to github. Travis should run everything and deploy to Heroku when finished.
-
-7. Set up MongoDB
+6. Set up MongoDB
   - Add MongoDB to the heroku app with `sudo heroku addons:create mongolab`
   - Get the URI with `sudo heroku config | grep MONGODB_URI`
   - Add the URI to the production Heroku environment with `heroku config:set MONGOLAB_URI=<my uri>`
@@ -77,3 +70,10 @@ FIRST TIME SETUP
     - Test this is working by deploying to Heroku and viewing the logs.
   - Add TEST_MONGOLAB_URI to local environment by creating .env file and adding. Will automatically be ignored by git and parsed by Node into env variables. Used in test.
   - Add TEST_MONGOLAB_URI to Travis CI environment. Can be encrypted and added to .travis.yml. See instructions here: https://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables
+
+7. Set up Heroku deployment from Travis CI
+  - Install Travis CI command line client `gem install travis -v 1.8.2 --no-rdoc --no-ri`
+  - Get your Heroku auth token by running `heroku auth:token`. Copy this.
+  - Encrypt your Heroku token with `travis encrypt -r aconfee/MEANTemplateV2 --org` (then paste in the token when prompted with 'Reading stdin.. press ctrl+D to finish')
+  - Copy the encrypted token and add to 'api_key: secure:' in .travis.yml
+  - Deploy to github. Travis should run everything and deploy to Heroku when finished.
